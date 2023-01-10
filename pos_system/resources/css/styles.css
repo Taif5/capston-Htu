@@ -1,0 +1,125 @@
+body {font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;   
+    
+  
+  }  
+  * {box-sizing: border-box;} * 
+   
+  
+   /* footer {
+    background-color: #222;
+    height: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+  }  */
+  
+   
+  footer {
+    height: 1.5rem;
+    bottom: 0; 
+    left: 0;;
+  }
+   
+
+  
+  .form1{
+    width: 70%;
+    padding-left:30%; 
+    margin-top: auto;
+    margin: 20px;
+    justify-content: center;
+  }
+  .input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    margin-bottom: 30px;
+  }
+  
+  h1{
+      text-align: center;
+      padding: 30px;
+  }
+  
+  .icon {
+    padding: 10px;
+    background:  rgb(28, 175, 23);
+    color: white;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+  }
+  
+  .input-field:focus {
+    border: 2px solid  rgb(28, 175, 23);
+  }
+  
+   
+  /* Set a style for the submit button */
+  .btn1 {  
+    background-color: rgb(28, 175, 23); 
+    color: white;
+    padding: 11px  20px;
+    border: none;
+    width: 100%;  
+    text-align: center;
+    opacity: 0.9; 
+  
+   } 
+   .btn1:hover {
+    opacity: 1;
+  }
+  
+  
+  
+  .admin-view #admin-area {
+      min-height: 100vh; 
+  }
+  
+  .admin-view .admin-links {
+      background-color: #212529;
+  }
+  
+  .admin-view .admin-links * {
+      background-color: #212529;
+  }
+  
+  .admin-view .admin-links li {
+      color: #fff;
+      border-color: #fff;
+  }
+  
+  .admin-view .admin-links .list-group-item {
+      border-bottom: 1px solid #fff;
+  }
+  
+  
+  .admin-view .admin-links li a {
+      display: block;
+      color: #fff;
+      border-color: #fff;
+      text-decoration: #fff;
+      transition: opacity .5s;
+  }
+  
+  .admin-view .admin-links li a:hover {
+      opacity: .7;
+  }
+  
+   
+
+
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
