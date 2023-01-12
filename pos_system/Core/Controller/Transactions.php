@@ -37,8 +37,8 @@ class  Transactions extends Controller
             $this->permissions(['transaction:read']);
             $this->view = 'transactions.index';
             $transaction = new Transaction; // new model transaction
-            $this->data['transactions'] = $transaction->get_admin_transaction(); 
-            $this->data['transactions_count'] = count($transaction->get_admin_transaction());
+            $this->data['transactions'] = $transaction->get_all(); 
+            $this->data['transactions_count'] = count($transaction->get_all());
 
         }
 

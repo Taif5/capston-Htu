@@ -49,7 +49,6 @@ class Model
         $data = array();
         $id=$_SESSION['user']['user_id'];
         $result = $this->connection->query("SELECT * FROM $this->table  where user_id=$id  AND DATE(`created_at`) = CURDATE()");
-
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_object()) {
                 $data[] = $row;
@@ -57,6 +56,15 @@ class Model
         }
         return $data;
     }
+
+
+
+ 
+ 
+    
+
+
+
 
     public function get_by_id($id)
     {

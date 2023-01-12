@@ -10,26 +10,22 @@ class User extends Model
     const ADMIN = array(
         "item:read", "item:create", "item:update", "item:delete",
         "user:read", "user:create", "user:update", "user:delete",
-        "transaction:read","transaction:create","transaction:update", "transaction:delete",
-        "selling:read", "selling:create","selling:update", "selling:delete",
-        
+        "transaction:read","transaction:update", "transaction:delete",
+        "selling:read","selling:update", "selling:delete",        
     );
 
-    const SELLER = array(
-        
-         
+    const SELLER = array( 
         "selling:read", "selling:create","selling:update", "selling:delete",
     );
 
 
     const PROCUREMENT = array(
-        "item:read",
-    );
+        "item:read","item:create", "item:update", "item:delete",
 
+    );
     const ACCOUNTANT = array(
-        "transaction:read", 
-        
-   );
+        "transaction:read","transaction:update","transaction:delete",  
+    );
 
 
     public function check_username(string $username)

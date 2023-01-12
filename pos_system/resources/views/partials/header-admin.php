@@ -80,14 +80,15 @@ form{
                     </li>
                     <?php endif;
                 ?>
-                                <?php if (Helper::check_permission(['transaction:read' ])) : ?>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/transactions">Transactions dashboard</a>
-                    </li>
+                      <?php if (Helper::check_permission(['transaction:read' ])) : ?>
+
+                   <li class="nav-item">
+                      <a class="nav-link" href="/transactions">Transactions dashboard</a>
+                   </li>
+                <?php endif;
+                      ?>
                  
-                    <?php endif;
-                ?>
                 </ul> 
 
 
@@ -117,6 +118,9 @@ form{
                         <a href="/items">Stock Management  </a>
                     </li>
                 <?php endif;
+                   
+                      
+            
 
                 if (Helper::check_permission(['item:create'])) :
                 ?>
@@ -137,6 +141,7 @@ form{
                         <a href="/users/create">Create User</a>
                     </li>
                 <?php endif; ?>
+
             </ul>
         </div>
         <div class="col-10 admin-area-content">
