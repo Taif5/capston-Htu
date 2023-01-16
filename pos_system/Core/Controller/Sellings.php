@@ -33,7 +33,9 @@ class  Sellings extends Controller
         $this->data['items_count'] = count($item->get_all());
     
         $transaction = new Transaction(); // new model transaction.
+        $this->data['transactions'] = $transaction->get_admin_transaction(); 
         $this->data['transactions_count'] = count($transaction->get_admin_transaction());
+        
 
     }
 

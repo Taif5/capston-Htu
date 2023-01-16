@@ -10,21 +10,16 @@
          <?php endforeach; ?>
      
         </select>
-     
-        
-
     </div>
+
     <div class="mb-3  mt-3 m-auto">
         <label for="item-Quantity"class="form-label p-2   fw-bold p-1" >Item Quantity</label>
      <input type="number" class="form-control mb-2 mx-2 shadow border" placeholder="Your item Quantity.." id="item-Quantity"  min="1" style="height:40px" name="item-Quantity">  
-         
-      
     </div>
 
-    <div class="text-center  ">
+    <div class="text-center ">
     <button type="submit" class="btn btn-success mt-2 ms-2 m-auto px-5 py-2" id="add_transaction">Sell</button>
-
-            </div>
+    </div>
 
 
 </form>
@@ -34,9 +29,10 @@
     <tr>
       <!-- <th scope="col">Id</th> -->
       <th scope="col" class="text-center">Item_Id</th>
-      <th scope="col"  class="text-center" >Item Quantity </th>
-      <th scope="col"  class="text-center" >Price</th>
+      <th scope="col"  class="text-center">Item Quantity </th>
+      <th scope="col"  class="text-center">Price</th>
       <th scope="col"  class="text-center">total </th>
+      <th scope="col"  class="text-center">Action</th>
        
     </tr>
   </thead>
@@ -58,12 +54,12 @@ $.ajax({
                     <tr>
                     
                      <td class="p-3 text-center">${element.item_id}</td>
-                     <td class="text-center">${element.quantity}</td>
+                     <td class="p-3 text-center">${element.quantity}</td>
                      <td class="p-3 text-center">${element.price}</td>
                      <td class="p-3 text-center">${element.total}</td>
-                    
-                     
-          
+                     <td class="p-3 text-center"><a href="/transactions/edit?id=${element.id}"   class="btn btn-warning  w-2" >Edit</a> 
+                     <a href="/transactions/delete?id=${element.id} "  class="btn btn-danger w-2">Delete</a> </td>            
+
                    </tr>
                      
                     `);
@@ -98,13 +94,14 @@ $.ajax({
                 response.body.forEach(element => {
                     $('tbody').append(`
                     <tr>
-                     <td class="p-3">${element.item_id}</td>
-                     <td class="p-3">${element.quantity}</td>
-                     <td class="p-3">${element.price}</td>
-                     <td class="p-3">${element.total}</td>
+                     <td class="p-3 text-center">${element.item_id}</td>
+                     <td class="p-3 text-center">${element.quantity}</td>
+                     <td class="p-3 text-center">${element.price}</td>
+                     <td class="p-3 text-center">${element.total}</td>
+                     <td class="p-3 text-center"><a href="/transactions/edit?id=${element.id}"   class="btn btn-warning  w-2" >Edit</a> 
+                     <a href="/transactions/delete?id=${element.id} "  class="btn btn-danger w-2">Delete</a> </td>                
                       
-            
-                     
+                      
                    </tr>
                      
                     `);

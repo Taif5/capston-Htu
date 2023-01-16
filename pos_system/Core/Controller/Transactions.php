@@ -42,6 +42,8 @@ class  Transactions extends Controller
 
         }
 
+  
+
         // public function single()
         // {
     
@@ -55,16 +57,16 @@ class  Transactions extends Controller
     
  
 
-            /**
-     * Display the HTML form for transaction creation
-     *
-     * @return void
-     */
-    public function create()
-    {
-        $this->permissions(['transaction:create']);
-        $this->view = 'transactions.create';
-    }
+    //         /**
+    //  * Display the HTML form for transaction creation
+    //  *
+    //  * @return void
+    //  */
+    // public function create()
+    // {
+    //     $this->permissions(['transaction:create']);
+    //     $this->view = 'transactions.create';
+    // }
 
    
     
@@ -79,7 +81,7 @@ class  Transactions extends Controller
         {
             $this->permissions(['transaction:read', 'transaction:update']);
             $this->view = 'transactions.edit';
-            $transaction = new transaction();
+            $transaction = new Transaction();
             $selected_transaction = $transaction->get_by_id($_GET['id']);
             $this->data['transaction'] = $selected_transaction;
         }
@@ -91,10 +93,11 @@ class  Transactions extends Controller
          */
         public function update()
         {
-            $this->permissions(['transaction:read', 'transaction:update']);
+            $this->permissions(['transaction:read', 'transaction:update']);     
             $transaction = new Transaction();
-            $transaction->update($_POST);
+            $transaction->update_transaction($_POST);
             Helper::redirect('/transactions');
+
         }
     
         /**

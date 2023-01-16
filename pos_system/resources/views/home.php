@@ -1,9 +1,5 @@
-
 <div class="login1">
-    
-
-    <h1> Login POS</h1>
-    
+ <h1> Login POS</h1>
         <form class="form1" method="POST" action="/authenticate">
     
             <?php if (!empty($_SESSION) && isset($_SESSION['error']) && !empty($_SESSION['error'])) : ?>

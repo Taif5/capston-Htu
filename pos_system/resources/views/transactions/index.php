@@ -1,6 +1,6 @@
 <h1 class="d-flex justify-content-around  text-center text-uppercase fw-bolder py-5 ">Transaction List (<?= $data->transactions_count ?>)</h1>
 
-<div class="row    ">
+<div class="row ">
     <table class="table table-success table-striped  table responsive w-75 m-auto py-5">
   <thead>
     <tr>
@@ -21,20 +21,18 @@
     
     foreach($data->transactions as $transaction ):
       ?>
-        <tr>
-        
-         <td class="p-3"><?= $transaction->id?></td> 
+      <tr>
+        <td class="p-3"><?= $transaction->id?></td> 
         <td class="p-3"><?= $transaction->item_id?></td>
         <td class="p-3"><?= $transaction->quantity?></td>
         <td class="p-3"><?= $transaction->total?></td>
-         <td class="p-3"><?=$transaction->created_at ?></td>
-        <td class="p-3"><?= $transaction->updated_at ?></td>  
-        <td class="p-3"><a href="/transactions/edit?id=<?=  $transaction->id ?>"   class="btn btn-warning  w-2" >Edit</a> 
-                     <a href="/transactions/delete?id=<?=$transaction->id?>" class="btn btn-danger w-2">Delete</a>             
-      </td>  
-        <?php
-       
-      endforeach;  ?>
+        <td class="p-3"><?=$transaction->created_at?></td>
+        <td class="p-3"><?= $transaction->updated_at?></td>  
+        <td class="p-3"><a href="/transactions/edit?id=<?=$transaction->id ?>" class="btn btn-warning  w-2" >Edit</a> 
+        <a href="/transactions/delete?id=<?=$transaction->id?>" class="btn btn-danger w-2">Delete</a>             
+        </td>  
+      <?php  
+    endforeach; ?>
   </tbody>
 </table>
 </div>

@@ -2,7 +2,6 @@
 
 <form action="/items/update" method="POST" class="w-50">
 
-
     <input type="hidden" name="id" value="<?= $data->item->id ?>">
 
     <div class="mb-3 mt-3 ">

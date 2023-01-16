@@ -58,14 +58,6 @@ class Model
     }
 
 
-
- 
- 
-    
-
-
-
-
     public function get_by_id($id)
     {
         $stmt = $this->connection->prepare("SELECT * FROM $this->table WHERE id=?"); // prepare the sql statement
@@ -167,7 +159,7 @@ class Model
                 case 'id':
                 case 'user_id':
                 case 'item_id':
-                case 'transaction_id':    
+             
 
                
                     $data_types .= "i";
@@ -195,6 +187,7 @@ class Model
 
     public function update($data)
     {
+
         $set_values = '';
         $id = 0;
 
@@ -215,6 +208,31 @@ class Model
         ";
         $this->connection->query($sql);
     }
+    public function update_transaction($data)
+    {
+
+        $quantity=$data["quantity"];
+        $total=$data["quantity"]*$data["price"];
+        $set_values = '';
+        $id = 0;
+
+        foreach ($data as $key => $value) {
+            if ($key == 'id') {
+                $id = $value;
+                continue;
+            }
+            if ($key != \array_key_last($data)) {
+                $set_values .= "$key='$value', ";
+            } else {
+                $set_values .= "$key='$value'";
+            }
+        }
+        $sql = "UPDATE `transactions` SET `quantity` = $quantity,`total`=$total WHERE `transactions`.`id` =$id;";
+        $this->connection->query($sql);
+    }
+
+
+  
 
     protected function connection()
     {

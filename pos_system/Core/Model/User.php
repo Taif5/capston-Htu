@@ -15,7 +15,7 @@ class User extends Model
     );
 
     const SELLER = array( 
-        "selling:read", "selling:create","selling:update", "selling:delete",
+        "selling:read","selling:update", "selling:delete",
     );
 
 
