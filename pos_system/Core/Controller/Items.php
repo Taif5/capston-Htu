@@ -36,8 +36,8 @@ class  Items extends Controller
         $this->permissions(['item:read']);
         $this->view = 'items.index';
         $item = new Item; // new model item.
-        $this->data['items'] = $item->get_all_items();
-        $this->data['items_count'] = count($item->get_all_items());
+        $this->data['items'] = $item->get_all();
+        $this->data['items_count'] = count($item->get_all());
         
     }
 
